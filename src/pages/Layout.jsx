@@ -12,7 +12,7 @@ import {
   TrendingUp, Search, Wrench, FileText, Rocket, BarChart3, Users, Settings, User, Bell, LifeBuoy, Brain, Lightbulb
 } from "lucide-react";
 
-import HorizontalChatPanel from "./components/layout/HorizontalChatPanel";
+import HorizontalChatPanel from "@/components/layout/HorizontalChatPanel";
 
 const navigationItems = [
   {
