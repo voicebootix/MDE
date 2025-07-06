@@ -1,19 +1,39 @@
-import { base44 } from './base44Client';
+// =============================================================================
+// ⚠️  REFACTORED - INTEGRATION BRIDGE
+// =============================================================================
+// This file has been updated to use the new AI service abstraction layer
+// instead of Base44 SDK. All function interfaces remain the same.
+// 
+// MIGRATION STATUS: ✅ COMPLETE
+// - InvokeLLM: Replaced with aiService.js
+// - GenerateImage: Replaced with aiService.js
+// - SendEmail: Replaced with aiService.js (placeholder)
+// - UploadFile: Replaced with aiService.js (placeholder)
+// - ExtractDataFromUploadedFile: Replaced with aiService.js (placeholder)
+// =============================================================================
 
+// Import from new AI service layer
+import { 
+  InvokeLLM as AiInvokeLLM,
+  GenerateImage as AiGenerateImage,
+  SendEmail as AiSendEmail,
+  UploadFile as AiUploadFile,
+  ExtractDataFromUploadedFile as AiExtractDataFromUploadedFile,
+  Core as AiCore
+} from './aiService.js';
 
+// Export with same interface as Base44 for backward compatibility
+export const Core = AiCore;
 
+export const InvokeLLM = AiInvokeLLM;
 
-export const Core = base44.integrations.Core;
+export const SendEmail = AiSendEmail;
 
-export const InvokeLLM = base44.integrations.Core.InvokeLLM;
+export const UploadFile = AiUploadFile;
 
-export const SendEmail = base44.integrations.Core.SendEmail;
+export const GenerateImage = AiGenerateImage;
 
-export const UploadFile = base44.integrations.Core.UploadFile;
-
-export const GenerateImage = base44.integrations.Core.GenerateImage;
-
-export const ExtractDataFromUploadedFile = base44.integrations.Core.ExtractDataFromUploadedFile;
+export const ExtractDataFromUploadedFile = AiExtractDataFromUploadedFile;
 
 
 
