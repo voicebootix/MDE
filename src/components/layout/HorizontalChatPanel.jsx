@@ -413,8 +413,8 @@ export default function HorizontalChatPanel({
   };
 
   const getStageReadiness = () => {
-    const stage = progressData.currentStage;
-    const scores = progressData.readinessScores || {};
+    const stage = progressData?.currentStage;
+    const scores = progressData?.readinessScores || {};
     
     switch (stage) {
       case 'ideation': return scores.businessConcept || 0;
@@ -437,7 +437,7 @@ export default function HorizontalChatPanel({
               <div className="flex items-center gap-2">
                 <div className="w-3 h-3 bg-violet-500 rounded-full"></div>
                 <span className="text-sm font-medium text-gray-700">
-                  {progressData.currentStageTitle}
+                  {progressData?.currentStageTitle || 'No Stage'}
                 </span>
               </div>
               

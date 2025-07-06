@@ -130,3 +130,15 @@ For support and contributions, please refer to the project's GitHub repository.
 ---
 
 **Note**: This project has been successfully refactored from Base44 platform to use open AI services while maintaining full functionality and backward compatibility.
+
+## ⚡ Render Deployment: Fix Blank Page (React Router)
+
+If you see a blank page after deploying to Render, add this rewrite rule in your Render Static Site settings:
+
+```
+Source: /*
+Destination: /index.html
+Status: 200
+```
+
+This ensures all routes are handled by React Router and prevents blank pages on refresh or deep links.
